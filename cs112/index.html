@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Carlos' Travel Website</title>
+	<link rel="globe" href="images/world.jpg">
+	<link rel="stylesheet" href="main.css">
+	<script src="java.js"></script>
+	<style>
+		.slider {
+		  position: relative;
+		  height: 200px;
+		}
+	
+		.slides {
+		  position: absolute;
+		  height: 200px;
+		}
+	</style>
+  
+</head>
+
+<body>
+	<header>
+		<img src="images/world.jpg" alt="Travel logo" height="80">
+		<h2>Travel Like a Pro</h2>
+		<h3>Your Guide To Navigating The Big Blue World</h3>
+	</header>
+	<main>
+		<section>
+			<h2>Our Mission</h2>
+			<p>To recommed the best experiences, cultural spots, activities, and restraunts to you can make traveling a fun, fufilling, and stress free experience.
+				 We travel the world finding the coolest spots so you dont have to waste your vacation time and just see the best of the best and make the most out for your time.</p>
+			<blockquote>&ldquo;The gladdest moment in human life, methinks, is a depqrture into unknown lands.&rdquo;</blockquote>
+		<div id="main-content">
+            <h2>3 TOP TRAVEL TIPS</h2>
+			<ul>
+				<li>Travel lightly (don't overpack it makes for an unneeded hastle)</li>
+				<li>Plan a general itinerary and list of things you'd like to see</li>
+				<li>Don't be afarid to get lost</li>
+			</ul>
+			<h2>Where To Next?</h2>
+			<div class="slider">
+				<img src="images/fiji.jpg" class="slides" alt="Fiji Image">
+				<img src="images/egypt.jpg" class="slides" alt="Egypt Image">
+				<img src="images/greece.jpg" class="slides" alt="Greece Image">
+				<img src="images/easterisland.jpg" class="slides" alt="Easter Image">
+				<img src="images/italy.jpg" class="slides" alt="Italy Image">
+			</div>
+		<div id="Menu">
+			<h1>Website Navigation</h1>
+			<nav>
+				<ul>
+
+                    <li> <a href="index.html">Home Page</a></li>
+                    <li> <a href="service_index.html">Service page</a> &nbsp;<b>Lets Help With Whatever Travel Help You Need!</b></li>
+                    <li> <a href="contactus_index.html">Contact Us!</a> &nbsp;<b>We Would Love To Hear From You!</b></li> 
+             </ul>
+			</nav>
+		</div>
+		</section>
+		
+		<aside>
+			<h2>PLACES TO VISIT NEXT</h2>
+			<h3><a href="paris.html">Paris, Frace</a></h3>
+			<img id="myImage1" src="images/eiffel-tower.jpg" onmouseover="changeImage1()" onmouseout="originalImage1()" height="140">
+			<h3><a href="tokyo.html">Tokyo, Japan</a></h3>
+			<img id="myImage2" src="images/tokyo.jpg" onmouseover="changeImage2()" onmouseout="originalImage2()" height="120">
+			<h3><a href="lodon.html">London, England</a></h3>
+			<img id="myImage3" src="images/lodon.jpg" onmouseover="changeImage3()" onmouseout="originalImage3()" height="120">
+			<h3><a href="tulum.html">Tulum, Mexico</a></h3>
+			<img id="myImage4" src="images/tulum.jpg" onmouseover="changeImage4()" onmouseout="originalImage4()" height="120">
+		</aside>
+		<script>
+			var slides = document.querySelectorAll(".slides");
+			var currentSlide = 0;
+		
+			function showSlides() {
+			  for (var i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			  }
+			  currentSlide = (currentSlide + 1) % slides.length;
+			  slides[currentSlide].style.display = "block";
+			}
+		
+			setInterval(showSlides, 3000);
+		</script>
+	</main>
+	<footer>
+		<p>&copy; 2023, CS 112 Carlos Miramontes</p>
+	</footer>
+</body>
+</html>

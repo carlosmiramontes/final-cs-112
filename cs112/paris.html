@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paris, France </title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+      .scroller {
+        width: 300px;
+        height: 200px;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+  
+      .images {
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Here's Our Top Travel Picks For Paris, France</h1>
+     <h2>TOP ACTIVITES</h2>
+     <style>
+        ul {
+          padding: 15px;
+        }
+        li {
+          margin: 0;
+        }
+      </style>
+      <ul>
+        <li><b>Eiffel Tower From Trocadero</b></li>
+        <div class="scroller">
+          <img src="images/trocadero.jpg" class="images" alt="Image1" >
+          <img src="images/torcadero2.jpg" class="images" alt="Image2">
+        </div>
+        <p>Trocadero is a marble platform that over looks the Eiffel Tower. Its a stunning view like no other. The platform allows you to see the full Eiffle Tower and get the most amazing pictures. Trocadero also has a set of marble stairs on each side to get down to street level and
+            walk to the Eiffel Tower. Its easily accessible through train as there is a stop right there. Trocadero is worth seeing anytime of day, but after 5pm the Eiffel Tower glitters with lights for 5 minutes every hour on the hour until 1am.  </p>
+        <li><b>Shopping on Champs Elysees</b></li>
+        <div class="scroller">
+          <img src="images/champs.jpg" class="images" alt="Champs">
+          <img src="images/louisvuitton.jpg" class="images" alt="Champs2" >
+        </div>
+        <p>Shopping or even just walking down Champs Elysees is a must. Starting at the Arc de Triomphe and ending basically at the Lourve this street is fulling with evryehting from Luxury shopping, amazing restaurants, and even night clubs. Shopping on this street is a must. Champs Elysees features everything from the 5 story Louis Vuittion flag ship store to Chanel, Cartier, Gucci, & Dior just to name a few. Champs Elysees also features many restaurants and cafes to have a little espresso or hot chocolate.  Even just taking a stroll down this street is a treat with beautful building and decorations. <b>PRO TIP (Buying luxury good in Paris can save you alot of money not only are the goods cheaper because they dont need to be imported but you can claim a 12% VAT tax on any purchase over 120 euro.)</b> </p>
+        <li><B> The Louvre</B></li>
+        <div class="scroller">
+          <img src="images/lourve.jpg"  class="images" alt="The Lourve" >
+          <img src="images/mona lisa.jpg"  class="images" alt="The Lourve2" >
+        </div>
+        <P>For good reason The Louvre is one of the most famous museums in the world. Featuring art like the Mona Lisa, The Venus de Milo, and The Coronation of Nepolian. In total the Louvre has over 35,000 works of art on display. Highly recommened is the courtyard in the Louvre with grand marble statues and cream color walls with trees omn ledges its so sireen. The museum also features ancient Egyptian artifacts. The Louvre was also a palace at one paint so everything is adorned and gilded. The park in front of the Lourve is also a peaceful place to rest with many people having picnics and vendors selling hot wine and crepes.</P>
+    </ul>
+    <h2>Good Eats</h2>
+    <ul>
+        <li><b>Le Train Bleu</b></li>
+        <img src="images/letrainbleu.jpg" alt="letrainbleu" height=200>
+        <p>This is a historic restaurant is in the middle of a train station. With beautiful art to show you all the stops the train makes. With amazing french dishes.</p>
+    </ul>
+    <script>
+      var scroller = document.querySelector(".scroller");
+      var images = document.querySelectorAll(".images");
+      var currentImage = 0;
+  
+      function showImages(n) {
+        scroller.scrollLeft = images[currentImage].offsetLeft + (images[currentImage].offsetWidth / 2) - (scroller.offsetWidth / 2);
+        currentImage = (currentImage + n + images.length) % images.length;
+      }
+  
+      scroller.addEventListener("click", function(event) {
+        if (event.clientX > scroller.offsetWidth / 2) {
+          showImages(1);
+        } else {
+          showImages(-1);
+        }
+      });
+    </script>
+  </body>
+</html>
